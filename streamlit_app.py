@@ -13,6 +13,7 @@ def butter_lowpass(cutoff, fs, order=5):
 
 def plot_filter_response(b, a, fs):
     w, h = freqz(b, a)
+    plt.figure(figsize=(6, 4))
     plt.plot(0.5*fs*w/np.pi, np.abs(h), 'b')
     plt.plot(cutoff, 0.5*np.sqrt(2), 'ko')
     plt.axvline(cutoff, color='k')
@@ -37,5 +38,3 @@ st.write("Sampling Frequency: ", fs, "Hz")
 st.write("Cutoff Frequency: ", cutoff, "Hz")
 st.write("Numerator (b) Coefficients: ", b)
 st.write("Denominator (a) Coefficients: ", a)
-
-
