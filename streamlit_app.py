@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import butter, freqz
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 def butter_lowpass(cutoff, fs, order=5):
     nyquist = 0.5 * fs
     normal_cutoff = cutoff / nyquist
@@ -19,9 +21,7 @@ def plot_filter_response(b, a, fs):
     plt.xlabel("Frequency (Hz)")
     plt.ylabel("Gain")
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Butterworth Lowpass Filter Coefficients Calculator")
-
 
 order = st.sidebar.slider("Filter Order", 1, 10, 5)
 fs = st.sidebar.slider("Sampling Frequency (Hz)", 1, 10000, 1000)
