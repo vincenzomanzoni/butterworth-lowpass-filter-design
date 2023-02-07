@@ -33,8 +33,5 @@ b, a = butter_lowpass(cutoff, fs, order)
 plot_filter_response(b, a, fs)
 st.pyplot()
 
-st.write("Filter Order: ", order)
-st.write("Sampling Frequency: ", fs, "Hz")
-st.write("Cutoff Frequency: ", cutoff, "Hz")
 st.write("Numerator (b) Coefficients: ", b)
 st.write("Denominator (a) Coefficients: ", a)
