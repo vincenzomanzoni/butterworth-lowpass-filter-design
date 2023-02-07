@@ -13,15 +13,23 @@ def butter_lowpass(cutoff, fs, order=5):
 
 def plot_filter_response(b, a, fs, width, height):
     w, h = freqz(b, a)
-    plt.figure(figsize=(width, height))
-    plt.plot(0.5*fs*w/np.pi, np.abs(h), 'b')
-    plt.plot(cutoff, 0.5*np.sqrt(2), 'ko')
-    plt.axvline(cutoff, color='k')
-    plt.xlim(0, 0.5*fs)
-    plt.grid(True)
-    plt.title("Lowpass Filter Frequency Response")
-    plt.xlabel("Frequency (Hz)")
-    plt.ylabel("Gain")
+    fig, ax = plt.subplots(2, 1, figsize=(width, height))
+    ax[0].plot(0.5*fs*w/np.pi, np.abs(h), 'b')
+    ax[0].plot(cutoff, 0.5*np.sqrt(2), 'ko')
+    ax[0].axvline(cutoff, color='k')
+    ax[0].set_xlim(0, 0.5*fs)
+    ax[0].set_title("Lowpass Filter Frequency Response")
+    ax[0].set_xlabel("Frequency (Hz)")
+    ax[0].set_ylabel("Gain")
+    ax[0].grid(True)
+
+    angles = np.unwrap(np.angle(h))
+    ax[1].plot(0.5*fs*w/np.pi, angles, 'g')
+    ax[1].set_xlim(0, 0.5*fs)
+    ax[1].set_title("Lowpass Filter Phase Response")
+    ax[1].set_xlabel("Frequency (Hz)")
+    ax[1].set_ylabel("Phase (radians)")
+    ax[1].grid(True)
 
 st.title("Butterworth Lowpass Filter Coefficients Calculator")
 
@@ -38,4 +46,4 @@ plot_filter_response(b, a, fs, width, height)
 st.pyplot()
 
 st.write("Numerator (b) Coefficients: ", b)
-st.write("Denominator (a) Coefficients: ", a)
+st.write("Denominator (a) Coefficients
