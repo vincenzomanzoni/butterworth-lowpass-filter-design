@@ -19,7 +19,9 @@ def plot_filter_response(b, a, fs):
     plt.xlabel("Frequency (Hz)")
     plt.ylabel("Gain")
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Butterworth Lowpass Filter Coefficients Calculator")
+
 
 order = st.sidebar.slider("Filter Order", 1, 10, 5)
 fs = st.sidebar.slider("Sampling Frequency (Hz)", 1, 10000, 1000)
