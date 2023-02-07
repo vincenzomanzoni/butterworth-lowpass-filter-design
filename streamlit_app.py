@@ -46,4 +46,4 @@ plot_filter_response(b, a, fs, width, height)
 st.pyplot()
 
 st.write("Numerator (b) Coefficients: ", b)
-st.write("Denominator (a) Coefficients
+st.write("Denominator (a) Coefficients: ", a)
