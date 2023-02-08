@@ -28,6 +28,8 @@ def plot_filter_response(b, a, fs, width, height):
     ax2.grid(False)
     plt.title("Butterworth Lowpass Filter Response")
 
+st.set_page_config(page_title="Butterworth Lowpass Filter Coefficients Calculator", page_icon=":guardsman:", layout="wide")
+
 st.title("Butterworth Lowpass Filter Coefficients Calculator")
 
 order = st.sidebar.slider("Filter Order", 1, 10, 2)
