@@ -30,9 +30,9 @@ def plot_filter_response(b, a, fs, width, height):
 
 st.title("Butterworth Lowpass Filter Coefficients Calculator")
 
-order = st.sidebar.slider("Filter Order", 1, 10, 5)
-fs = st.sidebar.number_input("Sampling Frequency (Hz)", value=1000, min_value=1, max_value=10000, step=1)
-cutoff = st.sidebar.number_input("Cutoff Frequency (Hz)", value=100, min_value=1, max_value=10000, step=1)
+order = st.sidebar.slider("Filter Order", 1, 10, 2)
+fs = st.sidebar.number_input("Sampling Frequency (Hz)", value=100, min_value=1, max_value=1000, step=1)
+cutoff = st.sidebar.number_input("Cutoff Frequency (Hz)", value=20, min_value=1, max_value=1000, step=1)
 
 b, a = butter_lowpass(cutoff, fs, order)
 
