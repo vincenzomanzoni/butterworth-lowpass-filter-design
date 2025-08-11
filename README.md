@@ -1,6 +1,26 @@
-# Welcome to Streamlit!
+# Butterworth Low-Pass Filter Design
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire. :heart:
+A Streamlit application that calculates Butterworth low-pass filter coefficients and visualizes the filter's frequency response.
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+## Features
+- Adjust filter order, sampling frequency, and cutoff frequency
+- View magnitude and phase response plots
+- Display numerator (b) and denominator (a) coefficients
+
+## Installation
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+Run the Streamlit app:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Use the sidebar controls to configure the filter and inspect the results.
+
+## Requirements
+See `requirements.txt` for a list of required packages.
